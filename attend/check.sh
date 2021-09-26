@@ -13,12 +13,12 @@ STICKER_ID="10855"
 # check TODAY attend
 TODAY=$(date "+%d")
 
-CHECK_0=$(cat check0)
+CHECK_0=$(cat /tmp/check0)
 if [ $CHECK_0 = $TODAY ]
 then
     NOW=$(date "+%d%H%M")
     # check end before 1hour
-    CHECK_1=$(cat check1)
+    CHECK_1=$(cat /tmp/check1)
     if [ $CHECK_1 = $NOW ]
     then
         STICKER_PACKAGE_ID="789"
@@ -29,7 +29,7 @@ then
     fi
 
     # check end
-    CHECK_2=$(cat check2)
+    CHECK_2=$(cat /tmp/check2)
     if [ $CHECK_2 = $NOW ]
     then
         STICKER_PACKAGE_ID="789"
@@ -39,7 +39,7 @@ then
         https://notify-api.line.me/api/notify
     fi
 
-    CHECK_3=$(cat check3)
+    CHECK_3=$(cat /tmp/check3)
     if [ $CHECK_3 = $NOW ]
     then
         STICKER_PACKAGE_ID="789"
